@@ -2,19 +2,18 @@ using asignar_saldos.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+// Registrar los servicios en el contenedor de dependencias
 builder.Services.AddScoped<SaldoService>();
+
+// Agregar controladores (API)
 builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 // Configuración de la cadena de conexión
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configurar el middleware de la aplicación
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
@@ -23,3 +22,4 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.MapControllers();
 app.Run();
+
