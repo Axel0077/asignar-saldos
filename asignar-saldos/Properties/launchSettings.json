@@ -4,7 +4,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:17776",
+      "applicationUrl": "http://localhost:5000",
       "sslPort": 44353
     }
   },
@@ -15,9 +15,10 @@
       "launchBrowser": true,
       "launchUrl": "swagger",
       "applicationUrl": "http://localhost:5000",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+        "environmentVariables": {
+            "ASPNETCORE_ENVIRONMENT": "Development",
+            "ConnectionStrings__DefaultConnection": "Server=AXELPEREZ;Database=master;Trusted_Connection=True;"
+        }
     },
     "https": {
       "commandName": "Project",
@@ -25,9 +26,9 @@
       "launchBrowser": true,
       "launchUrl": "swagger",
       "applicationUrl": "http://localhost:5000",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+        "environmentVariables": {
+            "ASPNETCORE_ENVIRONMENT": "Development"
+        }
     },
     "IIS Express": {
       "commandName": "IISExpress",
