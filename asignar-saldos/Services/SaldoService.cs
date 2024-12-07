@@ -1,5 +1,4 @@
 ﻿namespace asignar_saldos.Services;
-using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -53,12 +52,5 @@ public class SaldoService
         }
 
         return saldosAsignados;
-    }
-}
-
-{
-    public class SaldoService
-    {
-
     }
 }
