@@ -1,26 +1,25 @@
 using asignar_saldos.Services;
-using Fluent.Infrastructure.FluentModel;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Registrar los servicios en el contenedor de dependencias
-builder.Services.AddScoped<SaldoService>();
+// Add services to the container.
 
-// Agregar controladores (API)
+builder.Services.AddScoped<SaldoService>();
 builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 // Configuración de la cadena de conexión
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 
 var app = builder.Build();
 
-// Configurar el middleware de la aplicación
+// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseDeveloperExceptionPage();
+      app.UseDeveloperExceptionPage();
 }
 
 app.UseHttpsRedirection();
 app.MapControllers();
 app.Run();
-
