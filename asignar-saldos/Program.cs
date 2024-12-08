@@ -1,4 +1,5 @@
 using asignar_saldos.Services;
+using Fluent.Infrastructure.FluentModel;
 
 var builder = WebApplication.CreateBuilder(args);
 
